@@ -1,0 +1,51 @@
+.reservation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+  background-color: purple;
+  width: 1000px;
+  text-align: center;
+}
+
+
+.tableName {
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p.size {
+  font-size: 30px;
+}
+
+.seat {
+  font-size: 1em;
+  padding: 0 1em;
+  color: #fff;
+  background-color: green;
+  margin: 10px;
+}
+
+.edit {
+  font-size: 1em;
+  padding: 0 1em;
+  color: #fff;
+  background-color: blue;
+}
+
+.cancel {
+  font-size: 1em;
+  padding: 0 1em;
+  color: #fff;
+  background-color: red;
+  margin: 10px;
+}
