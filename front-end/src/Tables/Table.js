@@ -12,10 +12,6 @@ const Table = ({ table }) => {
     listReservations().then(setReservations);
   }, []);
 
-  const findReservation = reservations.find(
-    (reservation) =>
-      Number(reservation.reservation_id) === Number(table.reservation_id)
-  );
 
   async function finish(tableId) {
     if (
