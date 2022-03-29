@@ -9,7 +9,7 @@ const Table = ({ table }) => {
   const [error, setError] = useState(null);
   const history = useHistory();
   useEffect(() => {
-    listReservations().then(setReservations);
+    listReservations().then(setReservations).catch(setError);
   }, []);
 
 
