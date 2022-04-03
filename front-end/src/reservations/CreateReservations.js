@@ -34,9 +34,9 @@ const CreateReservations = () => {
             reservationId,
             abortController.signal
           );
+          resResponse.reservation_time = resResponse.reservation_time.substring(0,5)
           setReservation(resResponse);
-        } else {
-          setReservation({ ...initialFormData });
+        } else {          setReservation({ ...initialFormData });
         }
       } catch (err) {
         setError(err);
@@ -164,7 +164,7 @@ const CreateReservations = () => {
         </div>
         <div className="center">
           <button type="submit" className="button">
-            SUBMIT
+            submit
           </button>
           <button className="button" onClick={history.goBack}>
             CANCEL

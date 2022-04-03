@@ -8,19 +8,21 @@ function ReservationInfo({ reservation }) {
   const [error, setError] = useState(null);
   const history = useHistory();
 
-  async function handleCancel(reservationId) {
-    if (
-      window.confirm(
-        "Do you want to cancel this reservation? This cannot be undone."
-      )
-    ) {
-      try {
-        await cancelReservation(reservationId);
-        history.go();
-      } catch (error) {
-        setError(error);
-      }
-    }
+  async function handleCancel() {
+    const result = window.confirm(
+            'Do you want to cancel this reservation? This cannot be undone.'
+        );
+        if (result) {
+            const abortController = new AbortController();
+            let status = 'cancelled';
+            cancelReservation(
+                status,
+                reservation.reservation_id,
+                abortController.signal
+            ).then(() => {
+                history.push('/');
+            });
+        }
   }
 
   return (
@@ -65,9 +67,10 @@ function ReservationInfo({ reservation }) {
               Edit
             </a>
             <button
-              data-reservation-id-cancel={reservation.reservation_id}
-              onClick={handleCancel}
               className="btn cancel"
+              data-reservation-id-cancel={reservation.reservation_id}
+              id = {reservation.reservation_id}
+              onClick={handleCancel}
             >
               Cancel
             </button>

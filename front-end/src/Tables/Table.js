@@ -39,7 +39,7 @@ const Table = ({ table }) => {
             <p className="capacity" data-table-id-status={`${table.table_id}`}>
               Status:{" "}
               {table.reservation_id ? (
-                <span style={{ color: "red" }}> Booked </span>
+                <span style={{ color: "red" }}> Occupied </span>
               ) : (
                 <span style={{ color: "green" }}>Free</span>
               )}

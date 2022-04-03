@@ -56,7 +56,7 @@
                </div>
              )}
              {found && reservations.length === 0 ? (
-                 <h2>No reservations on this day</h2>
+                 <h2>No reservations found</h2>
              ): (
                  ``
              )}   
