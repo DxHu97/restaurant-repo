@@ -5,11 +5,11 @@ import ErrorAlert from "../layout/ErrorAlert";
 import "./Table.css";
 
 const Table = ({ table }) => {
-  const [reservations, setReservations] = useState([]);
+
   const [error, setError] = useState(null);
   const history = useHistory();
   useEffect(() => {
-    listReservations().then(setReservations).catch(setError);
+    listReservations().then().catch(setError);
   }, []);
 
 

@@ -5,7 +5,7 @@ import { cancelReservation } from "../utils/api";
 import "./ReservationInfo.css";
 
 function ReservationInfo({ reservation }) {
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const history = useHistory();
 
   async function handleCancel() {
